@@ -1,0 +1,11 @@
+def preOrder(root):
+    if root.left == None:
+        print(root.info, end = " ")
+    else:
+        print(root.info, end = " ")
+        preOrder(root.left)
+       
+    if root.right == None:
+        return
+    else:
+        preOrder(root.right)
