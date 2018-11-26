@@ -1,0 +1,12 @@
+def height(root):
+    left_height = 0
+    right_height = 0
+
+    if root.left:
+        left_height = 1 + height(root.left)
+
+    if root.right:
+        right_height = 1 + height(root.right)
+    
+
+    return left_height if left_height > right_height else right_height
