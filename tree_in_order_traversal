@@ -1,0 +1,9 @@
+def inOrder(root):
+    if root.left == None:
+        print(root.info, end = " ")
+    else:
+        inOrder(root.left)
+        print(root.info, end = " ")
+    
+    if root.right:
+        inOrder(root.right)
