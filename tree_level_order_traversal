@@ -1,0 +1,15 @@
+def levelOrder(root):
+    
+    q = []
+    q.append(root)
+    while True:
+        temp_list = q[:]
+        q[:] = []
+        for node in temp_list:
+            print(node.info, end = " ")
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        if len(q) == 0:
+            break
