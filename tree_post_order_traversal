@@ -1,0 +1,18 @@
+def postOrder(root):
+    if root.left == None and root.right == None:
+        print(root.info, end = " ")
+        return
+    
+    if root.left == None:
+        postOrder(root.right)
+        print(root.info, end = " ")
+        return
+    else:
+        postOrder(root.left)
+    
+    if root.right == None:
+        print(root.info, end = " ")
+        return
+    else:
+        postOrder(root.right)
+        print(root.info, end = " ")
