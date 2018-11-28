@@ -1,0 +1,11 @@
+def sortedInsert(head, data):
+    root = DoublyLinkedListNode(0)
+    root.next = head
+    curr = root
+    while curr.next and (data > curr.next.data):
+        curr = curr.next
+    next_node = curr.next
+    curr.next = DoublyLinkedListNode(data)
+    curr.next.prev = curr
+    curr.next.next = next_node
+    return root.next
