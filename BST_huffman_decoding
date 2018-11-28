@@ -1,0 +1,17 @@
+def decodeHuff(root, s):
+    initial_root = root
+    decoded_string = ""
+    for char in s:
+        if char == '0':
+            #move to left child
+            root = root.left
+            if root.data != '\0':
+                decoded_string += root.data
+                root = initial_root
+
+        elif char == '1':
+            root = root.right
+            if root.data != '\0':
+                decoded_string += root.data
+                root = initial_root
+    print(decoded_string)
