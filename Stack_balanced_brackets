@@ -1,0 +1,22 @@
+def isBalanced(s):
+    test_stack = []
+    insert = ["(","[","{"]
+    delete = [")","]","}"]
+    for bracket in s:
+        if bracket in insert:
+            test_stack.append(bracket)
+        if bracket in delete:
+            if len(test_stack) == 0:
+                return "NO"
+            poped = test_stack.pop()
+            if poped not in insert:
+                return "NO"
+            else:
+                index_bracket = delete.index(bracket)
+                index_poped = insert.index(poped)
+                if index_bracket != index_poped:
+                    return "NO"
+    if len(test_stack) == 0:
+        return "YES"
+    else:
+        return "NO"
