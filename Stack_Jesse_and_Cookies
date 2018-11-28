@@ -1,0 +1,18 @@
+def cookies_fun(k, A):
+    from heapq import heappop,heappush,heapify
+
+    cookies = A
+    minSweetness = k
+    heapify(cookies)
+
+    fC = 0
+    try:
+        while cookies[0] < minSweetness:
+            fC+=1
+            c1 = heappop(cookies)
+            c2 = heappop(cookies)
+            newCookie=(1*c1)+(2*c2)
+            heappush(cookies,newCookie)
+        return fC
+    except:
+        return -1
