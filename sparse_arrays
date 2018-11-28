@@ -1,0 +1,10 @@
+def matchingStrings(strings, queries):
+    from collections import Counter
+    ret_list = []
+    dicti = Counter(strings)
+    for query in queries:
+        if query in dicti.keys():
+            ret_list.append(dicti[query])
+        else:
+            ret_list.append(0)
+    return ret_list
