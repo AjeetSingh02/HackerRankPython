@@ -1,0 +1,18 @@
+N = int(input())
+s = []
+maxi = 0
+for _ in range(N):
+    command = list(map(int,input().split()))
+    if command[0] == 1:
+        if command[1] > maxi:
+            maxi = command[1]
+        s.append(command[1])
+    elif command[0] == 2:
+        a = s.pop()
+        if a == maxi and len(s) != 0:
+            maxi = max(s)
+        elif len(s) == 0:
+            maxi = 0
+    else:
+        print(maxi)
+
