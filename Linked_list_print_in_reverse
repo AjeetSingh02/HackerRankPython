@@ -1,0 +1,11 @@
+def reversePrint(head):
+    if head == None:
+        return
+    l = []
+    while head.next != None:
+        l.append(head.data)
+        head = head.next
+    l.append(head.data)
+
+    for d in l[::-1]:
+        print(d)
