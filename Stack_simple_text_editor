@@ -1,0 +1,35 @@
+n = int(input())
+string = ""
+length = 0
+edit_stack = []
+for _ in range(n):
+    inp = input().split()
+    if inp[0] == '1':
+        #append to string and push inserted value in edit_stack
+
+        string += inp[1]
+        l = len(inp[1])
+        length += l
+        edit_stack.append(l)
+
+    elif inp[0] == '2':
+        #push to be deleted in edit_stack and delete last k characters from string
+
+        edit_stack.append(string[length - int(inp[1]):])
+        string = string[:length - int(inp[1])]
+        length -= int(inp[1])
+        
+        
+    elif inp[0] == '3':
+        #print kth character of string
+        k = int(inp[1]) - 1
+        print(string[k])
+    else:
+        change = edit_stack.pop()
+        if type(change) == int:
+            string = string[:length - change]
+            length -= change
+        else:
+            string += change
+            l = len(change)
+            length += l
