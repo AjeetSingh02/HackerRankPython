@@ -1,2 +1,2 @@
 # HackerRankPython
-Solutions for some Python problems on HackerRank.com
+Solutions for some Python problems on https://www.hackerrank.com/
